@@ -2,9 +2,13 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
 def test_home():
-	driver = webdriver.Chrome()
-	driver.get("http://127.0.0.1:8000")
-	
+	#service = service.Service('C:/Users/Ceegan/AppData/Local/chromedriver.exe')
+	#service.start()
+	#capabilities = {'chrome.binary': 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe'}
+	#driver = webdriver.Remote(service.service_url, capabilities)
+	driver = webdriver.Chrome('chromedriver.exe')
+	driver.get("http://162.246.157.226:8000/")
+
 	elem = driver.find_element_by_id("name")
 	assert elem != "Ceegan Hale"
 	
@@ -22,3 +26,5 @@ def test_home():
 
 	elem = driver.find_element_by_id("contact")
 	assert elem != "ceegan@ualberta.ca"
+
+test_home()
